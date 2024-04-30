@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    name: build
+    name: Build
     runs-on: ubuntu-latest
     env:
       MDBOOK_VERSION: "0.4.12"
@@ -16,23 +16,34 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: true
+          
+      - name: Debug: List files in tools directory
+        run: ls -al ~/tools
+
       - name: Install mdbook
         run: |
-          mkdir ~/tools
+          mkdir -p ~/tools
           curl -L https://github.com/rust-lang/mdBook/releases/download/v$MDBOOK_VERSION/mdbook-v$MDBOOK_VERSION-x86_64-unknown-linux-gnu.tar.gz | tar xz -C ~/tools
           curl -L https://github.com/badboy/mdbook-mermaid/releases/download/v$MDBOOK_MERMAID_VERSION/mdbook-mermaid-v$MDBOOK_MERMAID_VERSION-x86_64-unknown-linux-gnu.tar.gz | tar xz -C ~/tools
-          curl -L https://github.com/Michael-F-Bryan/mdbook-linkcheck/releases/download/v$MDBOOK_LINKCHECK_VERSION/mdbook-linkcheck.v$MDBOOK_LINKCHECK_VERSION.x86_64-unknown-linux-gnu.zip -O
-          unzip mdbook-linkcheck.v$MDBOOK_LINKCHECK_VERSION.x86_64-unknown-linux-gnu.zip -d ~/tools
+          curl -L https://github.com/Michael-F-Bryan/mdbook-linkcheck/releases/download/v$MDBOOK_LINKCHECK_VERSION/mdbook-linkcheck.v$MDBOOK_LINKCHECK_VERSION.x86_64-unknown-linux-gnu.zip -o ~/tools/mdbook-linkcheck.zip
+          unzip ~/tools/mdbook-linkcheck.zip -d ~/tools
           chmod +x ~/tools/mdbook-linkcheck
           curl -s https://api.github.com/repos/zjp-CN/mdbook-theme/releases/latest \
                  | grep browser_download_url \
                  | grep mdbook-theme_linux \
                  | cut -d '"' -f 4 \
-                 | wget -qi -
-          tar -xzf mdbook-theme_linux.tar.gz -C ~/tools
+                 | wget -qi - -O ~/tools/mdbook-theme_linux.tar.gz
+          tar -xzf ~/tools/mdbook-theme_linux.tar.gz -C ~/tools
           echo ~/tools >> $GITHUB_PATH
+          
+      - name: Debug: List files in installed tools directory
+        run: ls -al ~/tools
+
       - name: Build
         run: mdbook build
+        # Ensure mdbook is executed in the correct directory
+        working-directory: ${{ github.workspace }}
+
       # share between different jobs
       - uses: actions/upload-artifact@v3
         with:
