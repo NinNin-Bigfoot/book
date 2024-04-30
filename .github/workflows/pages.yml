@@ -1,4 +1,3 @@
-# Simple workflow for deploying static content to GitHub Pages
 name: Deploy static content to Pages
 
 on:
@@ -9,7 +8,7 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-  # Run
+  # Run after successful completion of Mdbook build workflow
   workflow_run:
     workflows: ["Mdbook build"]
     types:
@@ -31,26 +30,33 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      # actions/download-artifact@v3 does not allow sharing across workflows
+
+      # Download the artifact from Mdbook build workflow
       - name: Download artifact
-        id: download-artifact
         uses: dawidd6/action-download-artifact@v2
         with:
           name: book
           path: book/
-          workflow: build.yml
+
+      # Configure Pages
       - name: Setup Pages
         uses: actions/configure-pages@v2
+
+      # Upload artifact
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          # Upload only book
           path: book
+
+      # Retrieve and print environment URL for debugging
+      - name: Get environment URL
+        run: echo "Environment URL: ${{ steps.deployment.outputs.page_url }}"
+
+      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
