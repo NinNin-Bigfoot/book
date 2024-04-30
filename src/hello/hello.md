@@ -12,3 +12,5 @@ This book aim to bring everyone who interest in ZK technology and need to start 
 - Everything that working about credential or privacy have some risk to gain or access the specifig patarcular credential, this book just teach how to understand and writing circuit . pls follow [`RTFM`](https://docs.circom.io/)
 
 and this book is not advice for development
+
+OK let's go learning!
