@@ -2,7 +2,7 @@ name: Mdbook build
 
 on:
   push:
-    branches: ["main"]
+    branches: ["master"]
 
 jobs:
   build:
