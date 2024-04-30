@@ -38,4 +38,5 @@ jobs:
       # share between different jobs
       - uses: actions/upload-artifact@v3
         with:
-          path: book
+          name: book
+          path: book/
