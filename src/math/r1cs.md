@@ -1,24 +1,23 @@
 # Rank 1 Constrain Systems 
 
-Now you circuit after compile and get ```file.r1cs``` file that mean 
-the part that matrix come to play.
+Now, after compiling your circuit, you obtain a ```file.r1cs``` file. This indicates that the part where matrix operations come into play has begun.
 
-> this is definition of R1CS ***Az * Bz - Cz = 0*** or ***Az * Bz = Cz***
+> This is the definition of R1CS. ***Az * Bz - Cz = 0*** or ***Az * Bz = Cz***
 
-while A, B, C is a matrix of circuit 
+where A, B, and C are matrices representing the circuit.
 
-and w is how to comput withness interm 
+and w is how to compute witness in term of
 - > (1 || x || w)
 
-and then do a element wise product (multiplier w to A, B, C index by index)
+and then perform an element-wise product (multiplying 'w' with A, B, and C index by index)
 
 ![Matrix definitiion](../asset/r1cs-matrix.png)
 
-here's some code exmaple of this Aritmatic circuit to R1CS
+Here are some code examples of how to convert arithmetic circuits to R1CS.
 
 ```out = x * y + 2```
 
-optimize for prevent r1cs larger than it needs to be.
+Optimize to prevent the R1CS file from becoming larger than necessary.
 
 ```out - 2 = x * y```
 
@@ -42,6 +41,6 @@ result = C.dot(w) == np.multiply(A.dot(w),B.dot(w))
 assert result.all(), "result contains an inequality"
 ```
 
-matrix size is depent on ***w***
+The size of the matrix depends on ***w***.
 
-but this is not done yet cuz it's lack of security go to next part to see how it more secure.
+However, this is not yet complete, as it lacks security. Please proceed to the next part to learn how to enhance its security.

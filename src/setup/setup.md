@@ -1,7 +1,7 @@
 # Setup Process
 
-Why we need to setup ?
-    - cuz we need to know that proof is generate collectly from prover 
+Why do we need to set up?
+    - Because we need to ensure that the proof is generated correctly by the prover.
 
 
 ## This is type of setup 
@@ -9,11 +9,12 @@ Why we need to setup ?
 ![Setup](../asset/setup.png)
 
 
-but here in this section we gonna use ```goth16``` to process trust setup 
-and it's trust setup per circuit.
+However, in this section, we will use Groth16 to process the trust setup.
+It's important to note that this trust setup is specific to each circuit.
 
+You need one setup per circuit.
 
-here's a code example of trust setup process 
+Here is a code example of the trust setup process.
 
 ```rust
 

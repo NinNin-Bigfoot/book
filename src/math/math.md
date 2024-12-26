@@ -1,31 +1,31 @@
 # Basic Math for Zero-Knowledge
 
-There is a lot of mathimatic using in Zero-knowlage technology like math in crypographic.
+There is a lot of mathematics used in zero-knowledge technology, similar to cryptography.
 
-but in this section we gonna learn math for understand how to write circuit and how the circuit work with math.
+However, in this section, we will focus on learning the mathematics necessary to understand how to write circuits and how these circuits function mathematically.
 
-There are 2 section of math that you should know before jump in code section
+There are two sections of mathematics that you should be familiar with before diving into the code section.
 
 ## Non-linear Equation
 
-- why we need to know this ?
-    - when we write circuit it's must be in term of Quadartic Equation (Non-linear) and this is the rules or constrain.
-- why it's must be Quadartic Equation
-    - imagine about if minimum of each computation is x ** 4
-    computation time will blow up, complexity and take more time, this is why circom allow just x ** 2 is maximum cuz it all about efficiency proof.
-#### linear vs non-linear
+- Why do we need to know this?
+    - When we write circuits in Circom, they must be expressed in terms of quadratic equations. These constraints are essential for the efficient generation of zero-knowledge proofs.
+- Why must circuits in Circom be expressed in terms of quadratic equations?
+    - Imagine if the minimum complexity of each computation were x ** 4. Computation time would skyrocket, leading to increased complexity and significantly longer processing times. This is why Circom restricts computations to a maximum of x ** 2 – it prioritizes efficient proof generation.
+#### Linear vs Non-linear
 ![Graph](../asset/linear.png)
 ## Matrix
 
 #### Rank of matrix
 
-- why we need to know this ?
-    - after wire aritmetic circuit it's will be compress and comoutation in term of ***R1CS (Rank-1 constrain system)***, and it all about matrix 
+- Why do we need to know this?
+    - After wiring an arithmetic circuit, it will be compressed and computations will be expressed in terms of ***R1CS (Rank-1 Constraint System)***, which heavily involves matrix operations. 1  
 
-- why rank-1 ? 
-    - Rank of matrix is use for evelutate about how many equation that we gonna find
-    - So Rank-1 constrain is the rules they will compute and process just 1 rank per matrix for efficiency time computaion, imagine have 10 rank in matrix, it gonnabe blow up
+Why is it called "Rank-1"?
+    - The rank of a matrix is used to evaluate how many independent equations can be derived from it.
+    - Therefore, Rank-1 constraints are designed to efficiently compute and process only one independent equation per matrix. Imagine having 10 ranks in a matrix; the computational complexity would significantly increase.
+
 ![Rank](../asset/rank.png)
 
 #### solving equation problem with matrix
-Trikc we can determine rank of matrix and then find solving equation by using gauss elimination method.
+A common technique to determine the rank of a matrix and subsequently solve systems of equations is to use Gaussian elimination.

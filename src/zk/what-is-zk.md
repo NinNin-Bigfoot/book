@@ -1,25 +1,25 @@
 # ZK-SNARK
 
-ZK Thecnology is using for proving the things by do not reveal any infomation or in the other word system will learn nothing about infomation.
+ZK technology is used for proving things without revealing any information. In other words, the system learns nothing about the information.
 
-But in this book we gonnna learn call ```ZK-SNARK```
+But in this book what we gonna learn is call```ZK-SNARK```
 
-let slipt a word ```SNARK``` <br> 
+Let's split the word ```SNARK``` <br> 
 **S** = Succint <br>
 **N** = Non-interactive <br>
 **ARK** = Argement of Knowleage<br>
 
-it's quit seem confustion ? but don't worry I'll explain step by step
+it's quit seem confustion? but don't worry I'll explain step by step
 
  
-***S (Succint)*** 👉  proof must be short and fasty to verify. <br><br>
-***N (Non-interactive)*** 👉 Prover send proof to verifier in one way, that mean verifier will not response back to prover, just Accept or Reject.
+***S (Succint)*** 👉  Proofs must be short and fast to verify. <br><br>
+***N (Non-interactive)*** 👉 The prover sends a proof to the verifier in a one-way communication; therefore, the verifier does not respond to the prover, but only ***Accepts*** or ***Rejects*** it.
 <br><br>
-***AR (Argement of Knowleage)*** 👉 Prover try to convince verifier to process proof without revel not thing about secret withness.
+***AR (Argement of Knowleage)*** 👉 The prover tries to convince the verifier to process the proof without revealing anything about the secret witness.
 
-and all the thing that I've explain is working on a hole of this diagram we will use this diagram to explain how zk work in this book.
+Everything I have explained thus far pertains to this diagram, which we will use throughout this book to explain how ZK works.
 
-Here is a simple flow chart
+Here is a simple flowchart to illustrate the process.
 
 ```mermaid
 graph LR
@@ -33,6 +33,4 @@ E --> G{Grants access/verification}
 F --> H{Rejects access}
 
 ```
-OK now you will seen a briefly actor or component, in zk-snark 
-next we will drive into each actor in zk-snark let go!!
-
+Now you will see a brief overview of the actors or components in zk-SNARK. Next, we will delve into each actor in detail. Let's begin!

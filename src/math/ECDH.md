@@ -1,13 +1,13 @@
 # Ecliptic curve
 
-Why you need to understand this ? 
- - zk-snark is working on field of big number in Ecliptic curve (BN254)
+Why do you need to understand this?
+ - zk-SNARKs operate on fields of large numbers within elliptic curves (BN254).
 
 > p = 21888242871839275222246405745257275088548364400416034343698204186575808495617
 
-cuz for security any input or withness will not show directly!. that why we used BN254 to optimize security 
+Because for security, any input or witness should not be directly revealed, we utilize BN254, an elliptic curve, to optimize security.
 
-this is a number of -1 in circom 
+This is the representation of negative one (-1) in Circom.
 
 ```math 
 p = 21888242871839275222246405745257275088548364400416034343698204186575808495617.
@@ -18,34 +18,33 @@ p = 2188824287183927522224640574525727508854836440041603434369820418657580849561
 # 21888242871839275222246405745257275088548364400416034343698204186575808495616
 
 ```
-and remember this is for security 
+Remember that this representation is used for security purposes in Circom.
 
-but why modulo p ??
-- to ensures that all values within the circuit stay within a specific range, making it more efficient to reason about and prove their validity in zk-SNARKs.
+But why modulo p?
+- To ensure that all values within the circuit remain within a specific range, making it more efficient to reason about and prove their validity in zk-SNARKs.
 
 
-OK don't worry if you don't understand now.
+Okay, no worries if you don't understand yet.
 
-ECDH have multiple ratio (method to create prairng )
+ECDH has multiple ratios (methods to create pairings)
     - Group Operation
     - Point Dobublig
     - Adding Vertical point
     - Scalar Multiplication 👈 I'll explain this.
 
-let say we have
+Let's say we have...
 -   P is a point on curve 
 -   k is a integer 𝕫
 -   Q(P * k time) ----> this is our final destination. <br>  
 >  Q = P+P+...+P } k times
 
-OK pls take a look in this graph <br>
+Okay, please take a look at this graph. <br>
 ![EC Graph](../asset//ec.png) <br>
 
 then look into this <br>
 ![EC Point](../asset/dot.png)
 
-so if i ask you what parameter or what is the K value untill I get the red point ?????
-- answer is mind blow up!! 🤯
+So, if I ask you what parameter or what is the K value to reach the red point, the answer might be mind-blowing! 🤯
 
 
-Here is a Bench mark about each type of Paring friendly lib. 👉 <https://hackmd.io/@gnark/eccbench#BN254>
+Here is a benchmark of each type of pairing-friendly library. 👉 <https://hackmd.io/@gnark/eccbench#BN254>

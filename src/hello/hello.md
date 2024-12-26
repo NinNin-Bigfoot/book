@@ -1,13 +1,14 @@
-# Hello Zero Knowledge 
+# Hello Zero Knowledge
+<img src="../asset/monkey.png" alt="NinNin" width="200" />
 
- NinNin is a Book Lab for ZK.
+ NinNin is a Book Lab for ZK. 
 
-Writen by [supamongkon.r@gmail.com](https://github.com/supamongkonR)
-This book aim to bring everyone who interest in ZK technology and need to start with easy step to understand untill you can mastering ZK
+Written by [supamongkon.r@gmail.com](https://github.com/supamongkonR)
+This book aims to introduce everyone interested in ZK technology and in need of an easy-to-follow guide to mastering it, beginning with the fundamentals.
 
-## Why we need to learn this ?
+## Why do we need to learn this?
 
-- If you're blockchain interest or developers, zk will become important thing sice the day of this book is publish.
+- If you are interested in blockchain or are a developer, zero-knowledge (ZK) technology will become an increasingly important field since the day this book was published.
 
 ## Book Structure 
 Begining 🥚 <br>
@@ -17,8 +18,8 @@ Experizing 🦦 <br>
 
 ## Security Risk
 
-- Everything that working about credential or privacy have some risk to gain or access the specifig patarcular credential, this book just teach how to understand and writing circuit . pls follow [`RTFM`](https://docs.circom.io/)
+- While any system working with credentials or privacy involves some risk of unauthorized access, this book focuses on teaching you how to understand and write circuits, a fundamental skill for working with zero-knowledge proofs (ZKPs). ZKPs offer a way to prove information is true without revealing the information itself, which can be crucial for building secure and private systems. To learn more about the specific implementation details of circuits,   I recommend referring to the official Circom documentation: [`RTFM`](https://docs.circom.io/)
 
-and this book is not advice for development
+Furthermore, this book does not provide development advice.
 
-OK let's go learning!
+Okay, let's learn!
